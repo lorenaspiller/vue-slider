@@ -13,12 +13,14 @@ var root = new Vue({
     slideIndex: 0
   },
   methods: {
+    // prev slide al click
     prevSlide: function() {
       this.slideIndex--;
       if (this.slideIndex < 0) {
         this.slideIndex = this.images.length -1;
       }
     },
+    // next slide al clicks
     nextSlide: function() {
       this.slideIndex++;
       if (this.slideIndex == this.images.length) {

@@ -18,24 +18,29 @@
   </head>
   <body>
 
-    <div id="app">
-      <div class="carousel-wrapper">
-        <div class="carousel">
+    <div class="page-container">
+        <div id="app">
+          <div class="carousel-wrapper">
+            <div class="carousel">
 
-          <div class="carousel__prev">
-            <i class="fas fa-chevron-left" @click="prevSlide"></i>
+              <div class="carousel__prev">
+                <i class="fas fa-chevron-left" @click="prevSlide"></i>
+              </div>
+
+              <div class="carousel__slide">
+                <img :src="images[slideIndex]" alt="">
+              </div>
+
+              <div class="carousel__next">
+                <i class="fas fa-chevron-right" @click="nextSlide"></i>
+              </div>
+
+              <div class="carousel__bullets">
+                <i class="fas fa-circle" v-for="(slide, index) in images" :class="slideIndex == index ? 'active' : ''" @click="slideIndex = index"></i>
+              </div>
+            </div>
           </div>
-
-          <div class="carousel__slide">
-            <img :src="images[slideIndex]" alt="">
-          </div>
-
-          <div class="carousel__next">
-            <i class="fas fa-chevron-right" @click="nextSlide"></i>
-          </div>
-
         </div>
-      </div>
     </div>
 
 
